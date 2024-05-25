@@ -1,4 +1,4 @@
-module github.com/go-jose/go-jose/v4
+module github.com/aybabtme/go-jose-v4-without-x5c-check
 
 go 1.21
 
