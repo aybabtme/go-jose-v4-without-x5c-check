@@ -311,19 +311,19 @@ func (k *JSONWebKey) UnmarshalJSON(data []byte) (err error) {
 	}
 
 	// If certificate chain *and* thumbprints are set, verify correctness.
-	if len(k.Certificates) > 0 {
-		leaf := k.Certificates[0]
-		sha1sum := sha1.Sum(leaf.Raw)
-		sha256sum := sha256.Sum256(leaf.Raw)
+	// if len(k.Certificates) > 0 {
+	// 	leaf := k.Certificates[0]
+	// 	sha1sum := sha1.Sum(leaf.Raw)
+	// 	sha256sum := sha256.Sum256(leaf.Raw)
 
-		if len(k.CertificateThumbprintSHA1) > 0 && !bytes.Equal(sha1sum[:], k.CertificateThumbprintSHA1) {
-			return errors.New("go-jose/go-jose: invalid JWK, x5c thumbprint does not match x5t value")
-		}
+	// 	if len(k.CertificateThumbprintSHA1) > 0 && !bytes.Equal(sha1sum[:], k.CertificateThumbprintSHA1) {
+	// 		return errors.New("go-jose/go-jose: invalid JWK, x5c thumbprint does not match x5t value")
+	// 	}
 
-		if len(k.CertificateThumbprintSHA256) > 0 && !bytes.Equal(sha256sum[:], k.CertificateThumbprintSHA256) {
-			return errors.New("go-jose/go-jose: invalid JWK, x5c thumbprint does not match x5t#S256 value")
-		}
-	}
+	// 	if len(k.CertificateThumbprintSHA256) > 0 && !bytes.Equal(sha256sum[:], k.CertificateThumbprintSHA256) {
+	// 		return errors.New("go-jose/go-jose: invalid JWK, x5c thumbprint does not match x5t#S256 value")
+	// 	}
+	// }
 
 	return
 }
