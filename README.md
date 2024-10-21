@@ -1,3 +1,6 @@
+# don't use this, use `"github.com/lestrrat-go/jwx/jwk"`
+
+
 # Go JOSE
 
 [![godoc](https://pkg.go.dev/badge/github.com/go-jose/go-jose/v4.svg)](https://pkg.go.dev/github.com/go-jose/go-jose/v4)
